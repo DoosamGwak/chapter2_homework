@@ -3,11 +3,11 @@ import random
 count_wdl = [0,0,0]
 
 def try_again():
-    a = input('게임을 다시 하시겠습니까? (y/n): ')
+    coin = input('게임을 다시 하시겠습니까? (y/n): ')
     
-    if a == 'y':
+    if coin == 'y':
         rsp_game()
-    elif a =='n': 
+    elif coin =='n': 
         return
     else:
         print('잘못된 입력값입니다. 다시 입력해주세요.\n')
@@ -31,51 +31,45 @@ def rsp_game():
 
 def check_rsp():
 
-    a = input('가위 바위 보 중 하나를 입력 하세요: \n')
+    player = input('가위 바위 보 중 하나를 입력 하세요: \n')
     
-    if a == '가위':
-        a = '가위'
-    elif a == '바위':
-        a = '바위'
-    elif  a == '보':
-        a = '보'
-    else:
+    if not (player=='가위' or player=='바위' or player=='보'):
         print('잘못된 입력값입니다. 다시 입력해주세요.\n')
         check_rsp()
     
-    return a
+    return player
 
-def win_or_lose(a, b):
+def win_or_lose(player, com):
 
     TXTWIN = '이겼습니다. 축하드립니다.\n'
     TXTLOSE = '졌습니다. 다음기회에...\n'
     TXTDRAW = '비겼습니다. 한번 더 ?\n'
 
-    if a=='바위':
-        if b=='바위':
+    if player =='바위':
+        if com=='바위':
             print(TXTDRAW)
             count_wdl[1] += 1
-        elif b=='가위':
+        elif com =='가위':
             print(TXTLOSE)
             count_wdl[2] += 1
         else:
             print(TXTWIN)
             count_wdl[0] += 1
-    elif a=='가위':
-        if b=='바위':
+    elif player =='가위':
+        if com=='바위':
             print(TXTWIN)
             count_wdl[0] += 1
-        elif b=='가위':
+        elif com=='가위':
             print(TXTDRAW)
             count_wdl[1] += 1
         else:
             print(TXTLOSE)
             count_wdl[2] += 1
     else:
-        if b=='바위':
+        if com =='바위':
             print(TXTLOSE)
             count_wdl[2] += 1
-        elif b=='가위':
+        elif com =='가위':
             print(TXTWIN)
             count_wdl[0] += 1
         else:
