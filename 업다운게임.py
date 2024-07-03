@@ -15,7 +15,7 @@ def check_ud(com, cnt):
     try:
         player = int(input('1~100의 자연수 중 하나를 입력 하세요: '))
         
-    except ValueError as b:
+    except ValueError:
         print('잘못된 입력값입니다. 다시 입력해주세요.\n')
         check_ud(com, cnt)
 
