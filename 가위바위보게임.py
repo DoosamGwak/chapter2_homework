@@ -17,7 +17,7 @@ def rsp_game():
     
     list_rsp= ['가위', '바위', '보']
     player = ''
-    com = list_rsp[random.randrange(0,3)]
+    com = random.choice(list_rsp)
     
     player = check_rsp()
 
