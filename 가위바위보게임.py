@@ -1,10 +1,10 @@
 import random
 
 count_wdl = [0,0,0]
-
+a = 1
 def try_again():
     coin = input('게임을 다시 하시겠습니까? (y/n): ')
-
+    
     if coin == 'y':
         rsp_game()
     elif coin =='n': 
