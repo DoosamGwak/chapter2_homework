@@ -45,34 +45,13 @@ def win_or_lose(player, com):
     TXTLOSE = '졌습니다. 다음기회에...\n'
     TXTDRAW = '비겼습니다. 한번 더 ?\n'
 
-    if player =='바위':
-        if com=='바위':
-            print(TXTDRAW)
-            count_wdl[1] += 1
-        elif com =='가위':
-            print(TXTLOSE)
-            count_wdl[2] += 1
-        else:
+    if (player=='바위' and com=='가위') or (player=='가위' and com=='보') or (player=='보' and com=='바위'):
             print(TXTWIN)
             count_wdl[0] += 1
-    elif player =='가위':
-        if com=='바위':
-            print(TXTWIN)
-            count_wdl[0] += 1
-        elif com=='가위':
-            print(TXTDRAW)
-            count_wdl[1] += 1
-        else:
+    elif (player=='바위' and com=='보') or (player=='가위' and com=='바위') or (player=='보' and com=='가위'):
             print(TXTLOSE)
             count_wdl[2] += 1
     else:
-        if com =='바위':
-            print(TXTLOSE)
-            count_wdl[2] += 1
-        elif com =='가위':
-            print(TXTWIN)
-            count_wdl[0] += 1
-        else:
             print(TXTDRAW)
             count_wdl[1] += 1
     
